@@ -1,14 +1,21 @@
 ---
 permalink: /404.html
 ---
-<!DOCTYPE html><html lang="en"><head>
-  <meta charset="utf-8"> 
-  <base href="https://finance.krzysztofsauermann.pl/404/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-<link rel="stylesheet" href="main.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="main.css"></noscript></head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <base href="https://finance.krzysztofsauermann.pl/404/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
 <body>
-  <app-root></app-root>
-<script src="main.js" type="module"></script>
-
-</body></html>
+    <script>
+        function getRedirectUrl() {
+            let search = location.search.replace('?', '');
+            let paramsSpliter = search != '' ? '&' : '';
+            return "https://finance.krzysztofsauermann.pl?route=" + location.pathname + paramsSpliter + search;
+        }
+        location.href = getRedirectUrl();
+    </script>
+</body>
+</html>
